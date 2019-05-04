@@ -1,5 +1,5 @@
 node{
-properties([parameters([string(defaultValue: 'IP', description: 'Where to build e.g IP', name: 'ENV', trim: true)])])
+    properties([parameters([string(defaultValue: 'IP', description: 'Where to build e.g IP', name: "ENV", trim: true)])])
     stage("Clone Git"){
       git "git@github.com:SharifAbdulcoder/Jan_Pipeline.git"
     }
@@ -13,8 +13,6 @@ properties([parameters([string(defaultValue: 'IP', description: 'Where to build 
     }
     stage("Start python app") {
       sh "ssh ec2-user@${ENV} python /tmp/01-hello-world/hello.py"
-
-
 
     }
 }
