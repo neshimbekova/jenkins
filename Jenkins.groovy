@@ -1,5 +1,5 @@
 node{
-
+properties([parameters([string(defaultValue: 'IP', description: 'Where to build e.g IP', name: 'ENV', trim: true)])])
     stage("Clone Git"){
       git "git@github.com:SharifAbdulcoder/Jan_Pipeline.git"
     }
