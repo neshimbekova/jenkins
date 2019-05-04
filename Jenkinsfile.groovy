@@ -5,6 +5,7 @@ node{
     }
 
     stage("Install Requirements"){
+      sh "ssh ec2-user@${ENV} sudo pip install virtualenv"
       sh "scp -r * ec2-user@${ENV}:/tmp"
       sh "ssh ec2-user@${ENV} virtualenv /tmp/venv"
       sh "ssh ec2-user@${ENV} ./tmp/venv/activate"
